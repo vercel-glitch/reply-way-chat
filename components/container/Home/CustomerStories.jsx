@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'    
-import Header from '../../Ui/Header'
+import Header from '../../common/Header'
 import Container from '../../common/Container'
 
 export default function CustomerStories() {
