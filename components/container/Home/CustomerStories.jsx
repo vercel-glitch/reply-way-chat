@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from 'react'
-import Image from 'next/image'
+import React, { useEffect, useRef } from 'react'    
 import Header from '../../Ui/Header'
+import Container from '../../common/Container'
 
 export default function CustomerStories() {
   const headerRef = useRef(null);
   const storyCardRef = useRef(null);
-  const logosRef = useRef(null);
 
   useEffect(() => {
     const observerOptions = {
@@ -31,7 +30,6 @@ export default function CustomerStories() {
 
     if (headerRef.current) observer.observe(headerRef.current);
     if (storyCardRef.current) observer.observe(storyCardRef.current);
-    if (logosRef.current) observer.observe(logosRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -55,11 +53,11 @@ export default function CustomerStories() {
         }
       `}</style>
       
-      <div id='customer-stories' className="bg-gray-50 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div id='customer-stories' className="bg-gray-50 py-16">
+        <Container>
           {/* Header Section */}
           <div ref={headerRef} className="opacity-0">
-            <Header title="Customer Stories" description="See how customers are innovating with Teams" />
+            <Header title="Testimonials" description="See how customers are innovating with Replyway" />
           </div>
 
           {/* Main Customer Story Card */}
@@ -77,7 +75,7 @@ export default function CustomerStories() {
 
                 {/* Quote */}
                 <blockquote className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
-                  "Without a doubt, the fluid collaboration that Teams enables has a positive impact on our ability to be responsive and focus on the work to be done"
+                  "Without a doubt, the fluid collaboration that Replyway enables has a positive impact on our ability to be responsive and focus on the work to be done"
                 </blockquote>
 
                 {/* Attribution */}
@@ -123,37 +121,7 @@ export default function CustomerStories() {
             </div>
           </div>
 
-          {/* Company Logos Section */}
-          <div ref={logosRef} className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 opacity-0">
-            {/* GoNarrative */}
-            <div className="bg-white rounded-lg border border-gray-200 p-3 sm:p-4 flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="flex items-center space-x-2">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded flex items-center justify-center transition-transform duration-300 hover:scale-110">
-                  <span className="text-white font-bold text-xs">GN</span>
-                </div>
-                <span className="text-xs sm:text-sm font-semibold text-gray-900">GoNarrative</span>
-              </div>
-            </div>
-
-            {/* ABN AMRO */}
-            <div className="bg-white rounded-lg border border-gray-200 p-3 sm:p-4 flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="text-center">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded mx-auto mb-1 transition-transform duration-300 hover:scale-110"></div>
-                <span className="text-xs sm:text-sm font-semibold text-gray-900">ABN AMRO</span>
-              </div>
-            </div>
-
-            {/* Berryessa Gap Vineyards */}
-            <div className="bg-white rounded-lg border border-gray-200 p-3 sm:p-4 flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <span className="text-xs sm:text-sm font-semibold text-gray-900 text-center">BERRYESSA GAP VINEYARDS</span>
-            </div>
-
-            {/* L'ORÉAL */}
-            <div className="bg-white rounded-lg border border-gray-200 p-3 sm:p-4 flex items-center justify-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <span className="text-xs sm:text-sm font-semibold text-gray-900">L'ORÉAL</span>
-            </div>
-          </div>
-        </div>
+         </Container>
       </div>
     </>
   )

@@ -71,7 +71,7 @@ export default function GetStarted() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Header */}
           <div ref={headerRef} className="opacity-0">
-            <Header title="Get Started" description="Take the next step with Teams" />
+            <Header title="Get Started" description="Take the next step with Replyway" />
           </div>
 
           {/* Cards Grid */}
@@ -107,7 +107,7 @@ export default function GetStarted() {
                 Plan events, share photos, and connect with your friends, family, and community.
               </p>
               <button className="w-full bg-blue-600 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:translate-x-1 text-sm sm:text-base">
-                Try Teams for free
+                Try Replyway for free
                 <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -123,7 +123,7 @@ export default function GetStarted() {
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">For enterprise</h3>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
-                Achieve more with Teams accounts for more than 300 people.
+                  Achieve more with Replyway accounts for more than 300 people.
               </p>
               <button className="w-full bg-blue-600 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:translate-x-1 text-sm sm:text-base">
                 Get started
@@ -157,11 +157,11 @@ export default function GetStarted() {
           <div ref={footerRef} className="text-center text-xs sm:text-sm text-gray-600 opacity-0">
             <p className="mb-3 sm:mb-4">
               <span className="text-xs">[1]</span> AI-generated meeting notes are currently available in{' '}
-              <a href="#" className="underline hover:text-blue-600 transition-colors duration-300">Microsoft Teams Premium</a> only.
+              <a href="#" className="underline hover:text-blue-600 transition-colors duration-300"> Replyway Premium</a> only.
             </p>
             
             <div className="mb-4 sm:mb-6">
-              <p className="mb-2 sm:mb-3 text-sm sm:text-base">Follow Microsoft Teams</p>
+              <p className="mb-2 sm:mb-3 text-sm sm:text-base">Follow  Replyway</p>
               <div className="flex justify-center space-x-3 sm:space-x-4">
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 hover:scale-110">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -187,7 +187,7 @@ export default function GetStarted() {
             </div>
 
             <p className="text-xs text-gray-500">
-              The Microsoft Teams logo is a registered trademark of Microsoft Corp. The single letter "T" is used under the licence of Deutsche Telekom AG.
+              The Replyway logo is a registered trademark of Microsoft Corp. The single letter "T" is used under the licence of Deutsche Telekom AG.
             </p>
           </div>
         </div>

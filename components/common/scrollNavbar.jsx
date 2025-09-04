@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Container from './Container'
 import { Link as ScrollLink } from 'react-scroll'
+import Image from 'next/image'
 
 export default function ScrollNavbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -49,10 +50,13 @@ export default function ScrollNavbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-sm">C</span>
-            </div>
-            <span className="text-gray-700 font-medium">ChatwayApp</span>
+            <Image 
+              src="/st-images/logo.png" 
+              alt="ChatwayApp Logo" 
+              width={120} 
+              height={40} 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Navigation Items */}
