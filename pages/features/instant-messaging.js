@@ -1,6 +1,6 @@
 import React from 'react'
-import FeaturesPageLayout from '../../../components/common/FeaturesPageLayout'
-import { featuresPagesData } from '../../data/featuresPages'
+import FeaturesPageLayout from '../../components/common/FeaturesPageLayout'
+import { featuresPagesData } from '../../src/data/featuresPages'
 
 export default function InstantMessaging() {
   const pageData = featuresPagesData['instant-messaging']
@@ -8,4 +8,6 @@ export default function InstantMessaging() {
   return (
     <FeaturesPageLayout sections={pageData.sections} theme="green" />
   )
-} 
+}
+
+

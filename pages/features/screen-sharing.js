@@ -1,7 +1,6 @@
-
 import React from 'react'
-import FeaturesPageLayout from '../../../components/common/FeaturesPageLayout'
-import { featuresPagesData } from '../../data/featuresPages'
+import FeaturesPageLayout from '../../components/common/FeaturesPageLayout'
+import { featuresPagesData } from '../../src/data/featuresPages'
 
 export default function ScreenSharing() {
   const pageData = featuresPagesData['screen-sharing']
@@ -10,3 +9,5 @@ export default function ScreenSharing() {
     <FeaturesPageLayout sections={pageData.sections} theme="blue" />
   )
 }
+
+

@@ -1,6 +1,6 @@
 import React from 'react'
-import FeaturesPageLayout from '../../../components/common/FeaturesPageLayout'
-import { featuresPagesData } from '../../data/featuresPages'
+import FeaturesPageLayout from '../../components/common/FeaturesPageLayout'
+import { featuresPagesData } from '../../src/data/featuresPages'
 
 export default function VideoConferencing() {
   const pageData = featuresPagesData['video-conferencing']
@@ -8,4 +8,6 @@ export default function VideoConferencing() {
   return (
     <FeaturesPageLayout sections={pageData.sections} theme="yellow" />
   )
-} 
+}
+
+
