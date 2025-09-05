@@ -1,9 +1,126 @@
-// Dynamic Components
-import DynamicHero from '../../components/container/Features/DynamicHero'
-import DynamicFeatures from '../../components/container/Features/DynamicFeatures'
-import DynamicBenefits from '../../components/container/Features/DynamicBenefits'
-import DynamicFAQ from '../../components/container/Features/DynamicFAQ'
-import DynamicGetStarted from '../../components/container/Features/DynamicGetStarted'
+// Dynamic Components - removed imports for non-existent components
+import React from 'react'
+
+// Simple placeholder components
+const DynamicHero = ({ title, subtitle, bannerText, primaryCtaText, secondaryCtaText, stats }) => (
+  <div className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <div className="max-w-4xl mx-auto text-center px-4">
+      {bannerText && <p className="text-sm text-blue-600 mb-4">{bannerText}</p>}
+      <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">{title}</h1>
+      <p className="text-xl text-gray-600 mb-8">{subtitle}</p>
+      <div className="flex gap-4 justify-center mb-12">
+        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg">{primaryCtaText}</button>
+        <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg">{secondaryCtaText}</button>
+      </div>
+      {stats && (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+              <div className="text-gray-600">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+)
+
+const DynamicFeatures = ({ title, subtitle, features, demoTitle, demoDescription, demoFeatures }) => (
+  <div className="py-20 bg-white">
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+        <p className="text-xl text-gray-600">{subtitle}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features?.map((feature, i) => (
+          <div key={i} className="p-6 border border-gray-200 rounded-lg">
+            <feature.icon className="w-8 h-8 text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+            <p className="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)
+
+const DynamicBenefits = ({ title, subtitle, benefits, statsTitle, statsSubtitle, useCasesTitle, useCases }) => (
+  <div className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+        <p className="text-xl text-gray-600">{subtitle}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {benefits?.map((benefit, i) => (
+          <div key={i} className="p-6 bg-white rounded-lg shadow-sm">
+            <benefit.icon className="w-8 h-8 text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+            <p className="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)
+
+const DynamicFAQ = ({ subtitle, faqs }) => (
+  <div className="py-20 bg-white">
+    <div className="max-w-4xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+        <p className="text-xl text-gray-600">{subtitle}</p>
+      </div>
+      <div className="space-y-6">
+        {faqs?.map((faq, i) => (
+          <div key={i} className="p-6 border border-gray-200 rounded-lg">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+            <p className="text-gray-600">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)
+
+const DynamicGetStarted = ({ title, subtitle, mainCtaTitle, mainCtaSubtitle, primaryCtaText, platforms, finalCtaTitle, finalCtaSubtitle }) => (
+  <div className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <div className="max-w-6xl mx-auto px-4 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+      <p className="text-xl text-gray-600 mb-12">{subtitle}</p>
+      
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{mainCtaTitle}</h3>
+        <p className="text-gray-600 mb-6">{mainCtaSubtitle}</p>
+        <button className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg">{primaryCtaText}</button>
+      </div>
+
+      {platforms && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {platforms.map((platform, i) => (
+            <div key={i} className="p-6 bg-white rounded-lg shadow-sm">
+              <platform.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">{platform.name}</h4>
+              <p className="text-gray-600 mb-4">{platform.description}</p>
+              <ul className="text-sm text-gray-500">
+                {platform.features?.map((feature, j) => (
+                  <li key={j}>• {feature}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{finalCtaTitle}</h3>
+        <p className="text-gray-600">{finalCtaSubtitle}</p>
+      </div>
+    </div>
+  </div>
+)
 
 // Icons for features
 import { Monitor, Users, Shield, Zap, Eye, Share2, Settings, BarChart3, Video, MessageCircle, Phone, FileText, TrendingUp, Globe, Clock, DollarSign, Target, CheckCircle, Lock, Wifi, Smartphone, Tablet, Search, Building } from 'lucide-react'
