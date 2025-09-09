@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import Navbar from '../components/common/Navbar'
 import Container from '../components/common/Container'
 import Footer from '../components/common/Footer'
@@ -156,7 +157,9 @@ export default function Contact() {
             <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Ready to Get Started?</h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">Join thousands of teams already using Replyway to transform their collaboration experience.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-primary hover:bg-[#7c3aed] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">Get Started</button>
+              <Link href="/signup">
+                <button className="bg-primary hover:bg-[#7c3aed] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">Get Started</button>
+              </Link>
             </div>
           </div>
         </Container>

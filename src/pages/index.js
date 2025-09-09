@@ -5,7 +5,6 @@ import Hero from '../../components/container/Home/Hero'
 import Features from '../../components/container/Home/Features'
 import Solutions from '../../components/container/Home/Solutions'
 import ProductAndServices from '../../components/container/Home/ProductAndServices'
-import CustomerStories from '../../components/container/Home/CustomerStories'
 
 import Footer from '../../components/common/Footer'
 
@@ -21,9 +20,7 @@ export default function index() {
         <Features />
         <Solutions />
         <ProductAndServices />
-        <CustomerStories />
       </div>
-      
       <Footer />
     </>
   )

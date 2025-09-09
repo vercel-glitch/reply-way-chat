@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import Navbar from '../components/common/Navbar'
 import Container from '../components/common/Container'
 import Footer from '../components/common/Footer'
-import { Download as DownloadIcon, Smartphone, Monitor, Globe, Shield, Zap, CheckCircle } from 'lucide-react'
+import { Download as DownloadIcon, Smartphone, Monitor, Globe, Shield, Zap, CheckCircle, Laptop } from 'lucide-react'
 
 export default function Download() {
   const heroRef = useRef(null);
@@ -144,32 +145,26 @@ export default function Download() {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Desktop App</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Get the full Replyway experience on Windows, macOS, and Linux with our desktop application.
-                </p>
-                <div className="space-y-3">
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
-                    <DownloadIcon className="w-5 h-5" />
-                    <span>Download for Windows</span>
-                  </button>
-                  <button className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
-                    <DownloadIcon className="w-5 h-5" />
-                    <span>Download for macOS</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Web App */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Globe className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Web App</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Access Replyway directly in your browser. No download required, works on any device.
+                  Get the full Replyway experience on Windows and Linux with our desktop application.
                 </p>
                 <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
-                  <Globe className="w-5 h-5" />
-                  <span>Open Web App</span>
+                  <DownloadIcon className="w-5 h-5" />
+                  <span>Download for Windows</span>
+                </button>
+              </div>
+
+              {/* Mac App */}
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Laptop className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Mac App</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Native macOS application with full integration and optimized performance for Mac users.
+                </p>
+                <button className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+                  <DownloadIcon className="w-5 h-5" />
+                  <span>Download for Mac</span>
                 </button>
               </div>
             </div>
@@ -217,9 +212,9 @@ export default function Download() {
                 description: "Full-featured desktop experience with advanced collaboration tools."
               },
               {
-                icon: Globe,
-                title: "Web Access",
-                description: "Instant access through any browser without installation required."
+                icon: Laptop,
+                title: "Mac Optimized",
+                description: "Native macOS experience with full system integration and performance optimization."
               }
             ].map((feature, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
@@ -247,9 +242,11 @@ export default function Download() {
               Download Replyway today and experience the future of team collaboration.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-primary hover:bg-[#7c3aed] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
-                Get Started
-              </button>
+              <Link href="/signup">
+                <button className="bg-primary hover:bg-[#7c3aed] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+                  Get Started
+                </button>
+              </Link>
             </div>
           </div>
         </Container>

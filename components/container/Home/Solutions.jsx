@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Container from '../../common/Container'
-import { Users, Phone, Users2, MessageCircle } from 'lucide-react'
+import { Users, Phone, Users2, MessageCircle, FolderKanban, CheckSquare } from 'lucide-react'
 
 export default function Solutions() {
   const cardsRef = useRef(null);
@@ -34,6 +34,20 @@ export default function Solutions() {
       description: 'Communicate instantly with team chat, channels, and integrated messaging across all your devices.',
       image: '/st-images/chat.avif',
       icon: MessageCircle
+    },
+    {
+      id: 'project-management',
+      title: 'Project Management',
+      description: 'Organize projects, set goals, and track progress seamlessly.',
+      image: '/st-images/meet.avif',
+      icon: FolderKanban
+    },
+    {
+      id: 'task-management',
+      title: 'Task Management',
+      description: 'Manage tasks efficiently with deadlines, priorities, and collaboration tools.',
+      image: '/st-images/call.avif',
+      icon: CheckSquare
     }
   ]
 
@@ -86,7 +100,7 @@ export default function Solutions() {
             {solutions.map((solution, index) => {
               const IconComponent = solution.icon;
               return (
-                <div key={solution.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                <div key={solution.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-gray-50 rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 min-h-[400px] lg:min-h-[500px]">
                   {/* Content */}
                   <div className={`flex-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div className="flex items-center space-x-3 mb-4">
