@@ -115,26 +115,7 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-white">
-        <Container>
-          <div ref={teamRef} className="text-center mb-16 opacity-0">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Meet the passionate individuals behind Replyway</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((m, i) => (
-              <div key={i} className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center text-3xl">{m.image}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{m.name}</h3>
-                <p className="text-blue-600 font-medium mb-3">{m.role}</p>
-                <p className="text-gray-600 leading-relaxed">{m.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      
 
       {/* Story */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
@@ -145,7 +126,7 @@ export default function About() {
             </div>
             <div className="prose prose-lg mx-auto text-gray-600">
               <p className="text-lg leading-relaxed mb-6">Replyway was born from a simple observation: while technology has made us more connected than ever, true collaboration remains challenging. Teams struggle with fragmented tools, poor user experiences, and solutions that don't adapt to their unique workflows.</p>
-              <p className="text-lg leading-relaxed mb-6">Founded in 2023, we set out to create a platform that would revolutionize how teams work together. Our journey began with a small team of passionate engineers, designers, and product experts who shared a common vision: to build tools that don't just connect people, but truly empower them.</p>
+              <p className="text-lg leading-relaxed mb-6">Founded in 2025, we set out to create a platform that would revolutionize how teams work together. Our journey began with a small team of passionate engineers, designers, and product experts who shared a common vision: to build tools that don't just connect people, but truly empower them.</p>
               <p className="text-lg leading-relaxed mb-6">Today, Replyway serves thousands of teams worldwide, helping them communicate more effectively, collaborate seamlessly, and achieve their goals faster. We continue to innovate and evolve, always guided by our core mission and the feedback of our amazing community.</p>
               <p className="text-lg leading-relaxed">As we look to the future, we're excited about the possibilities that AI and emerging technologies bring. We're committed to staying at the forefront of innovation while maintaining the human-centered approach that makes our platform special.</p>
             </div>

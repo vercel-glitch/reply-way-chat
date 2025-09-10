@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-purple-50"></div>
 

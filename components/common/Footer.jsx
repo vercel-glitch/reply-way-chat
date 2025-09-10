@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex md:block justify-center md:justify-start">
               <Link href="/" className="inline-flex items-center hover:opacity-90 transition-opacity">
                 <Image 
-                  src="/st-images/logo.png" 
+                  src="/footer.png" 
                   alt="ReplyWay Logo" 
                   width={140} 
                   height={44} 
