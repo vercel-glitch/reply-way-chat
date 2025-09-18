@@ -179,15 +179,7 @@ export default function Features() {
                       {feature.description}
                     </p>
                     
-                    <a 
-                      href="#" 
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300"
-                    >
-                      Learn more
-                      <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
+                    {/* Learn more button removed as requested */}
                   </div>
                   
                   {/* Image */}
