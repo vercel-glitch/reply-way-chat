@@ -1,5 +1,6 @@
 import React from 'react'
 import Container from '../../common/Container'
+import Link from 'next/link'
 
 export default function CTA() {
     return (
@@ -19,9 +20,9 @@ export default function CTA() {
                             Join Replyway and streamline communication with modern tools that keep your work moving forward.
                         </p>
                         <div className="mt-6 sm:mt-8 flex justify-center">
-                            <button className="inline-flex items-center justify-center rounded-lg bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/50">
+                            <Link href="/signup" className="inline-flex items-center justify-center rounded-lg bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/50">
                                 Get Started
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
