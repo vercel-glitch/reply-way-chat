@@ -55,13 +55,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-center md:text-left">
               <li>
-                <Link href="#" className="text-white hover:opacity-90 transition-colors">Terms of Service</Link>
+                <Link href="/terms-and-conditions" className="text-white hover:opacity-90 transition-colors">Terms &amp; Conditions</Link>
               </li>
               <li>
-                <Link href="#" className="text-white hover:opacity-90 transition-colors">Privacy Policy</Link>
+                <Link href="/privacy-policy" className="text-white hover:opacity-90 transition-colors">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="#" className="text-white hover:opacity-90 transition-colors">Cookies Policy</Link>
+                <Link href="/cookies-policy" className="text-white hover:opacity-90 transition-colors">Cookies Policy</Link>
               </li>
             </ul>
           </div>
