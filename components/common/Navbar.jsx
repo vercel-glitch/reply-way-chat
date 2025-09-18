@@ -2,9 +2,29 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from '../common/Container'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleEscapeKey = (e) => {
+      if (e.key === 'Escape') {
+        setIsSignupOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscapeKey);
+    return () => window.removeEventListener('keydown', handleEscapeKey);
+  }, []);
+
+  useEffect(() => {
+    const openSignup = () => setIsSignupOpen(true);
+    window.addEventListener('open-signup', openSignup);
+    return () => window.removeEventListener('open-signup', openSignup);
+  }, []);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
@@ -183,6 +203,20 @@ export default function Navbar() {
                   </button>
 
                 </form>
+                <div className="text-center mt-4">
+                  <p className="text-sm text-gray-600">
+                    Already have an account?{" "}
+                    <span
+                      onClick={() => {
+                        setIsSignupOpen(false);
+                        router.push("/signin");
+                      }}
+                      className="text-primary cursor-pointer hover:underline"
+                    >
+                      Login
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
