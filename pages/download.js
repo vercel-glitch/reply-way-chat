@@ -116,27 +116,7 @@ export default function Download() {
       <section className="pt-2 pb-20 bg-white">
         <Container>
           <div ref={downloadRef} className="max-w-6xl mx-auto opacity-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Mobile App */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Smartphone className="w-8 h-8 text-blue-600" />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Mobile App</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Download Replyway for iOS and Android. Stay connected and collaborate on the go.
-                </p>
-                <div className="space-y-3">
-                  <button className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
-                    <DownloadIcon className="w-5 h-5" />
-                    <span>App Store</span>
-                  </button>
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
-                    <DownloadIcon className="w-5 h-5" />
-                    <span>Google Play</span>
-                  </button>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 
               {/* Desktop App */}
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 text-center">
