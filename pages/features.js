@@ -6,8 +6,7 @@ import Footer from '../components/common/Footer'
 import { Users, Phone, Users2, MessageCircle, FolderKanban, CheckSquare } from 'lucide-react'
 
 export default function Features() {
-  const heroRef = useRef(null);
-  const featuresRef = useRef(null);
+  const heroRef = useRef(null)
 
   const features = [
     {
@@ -54,56 +53,29 @@ export default function Features() {
     }
   ]
 
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+  
 
+  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-in');
+          entry.target.classList.add('animate-slide-in')
         }
-      });
-    }, observerOptions);
+      })
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
 
-    if (heroRef.current) observer.observe(heroRef.current);
-    if (featuresRef.current) observer.observe(featuresRef.current);
-
-    return () => observer.disconnect();
-  }, []);
+    if (heroRef.current) observer.observe(heroRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
       <style jsx>{`
-        @keyframes slideInFromLeft {
-          0% {
-            transform: translateX(-30px);
-            opacity: 0;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        
-        .animate-slide-in {
-          animation: slideInFromLeft 0.8s ease-out forwards;
-        }
-        
-        .slide-in-delay-1 {
-          animation-delay: 0.2s;
-        }
-        
-        .slide-in-delay-2 {
-          animation-delay: 0.4s;
-        }
-        
-        .slide-in-delay-3 {
-          animation-delay: 0.6s;
-        }
+        @keyframes slideInFromLeft { 0% { transform: translateX(-30px); opacity:0 } 100% { transform: translateX(0); opacity:1 } }
+        .animate-slide-in { animation: slideInFromLeft .8s ease-out forwards }
+        .slide-in-delay-1 { animation-delay: .2s }
       `}</style>
+      
       
       <Navbar />
       
@@ -159,11 +131,11 @@ export default function Features() {
       <section className="pt-2 pb-20 bg-white">
         <Container>
           {/* Features Sections */}
-          <div ref={featuresRef} className="space-y-20 opacity-0">
+          <div className="space-y-20">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={feature.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-gray-50 rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 min-h-[400px] lg:min-h-[500px]">
+                <div key={feature.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 min-h-[400px] lg:min-h-[500px]">
                   {/* Content */}
                   <div className={`flex-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div className="flex items-center space-x-3 mb-4">

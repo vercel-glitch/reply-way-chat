@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Container from '../../common/Container'
 import { Users, Phone, Users2, MessageCircle, FolderKanban, CheckSquare } from 'lucide-react'
 
 export default function Solutions() {
-  const cardsRef = useRef(null);
 
   const solutions = [
     {
@@ -51,52 +50,16 @@ export default function Solutions() {
     }
   ]
 
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('animate-slide-in');
-          void entry.target.offsetHeight;
-          entry.target.classList.add('animate-slide-in');
-        } else {
-          entry.target.classList.remove('animate-slide-in');
-        }
-      });
-    }, observerOptions);
-
-    if (cardsRef.current) observer.observe(cardsRef.current);
-
-    return () => observer.disconnect();
-  }, []);
+  
 
   return (
     <>
-      <style jsx>{`
-        @keyframes slideInFromLeft {
-          0% {
-            transform: translateX(-30px);
-            opacity: 0;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        
-        .animate-slide-in {
-          animation: slideInFromLeft 0.8s ease-out forwards;
-        }
-      `}</style>
+      
       
       <section id='solutions' className="pt-12 pb-20 bg-white">
         <Container>
           {/* Solutions Sections */}
-          <div ref={cardsRef} className="space-y-20 opacity-0">
+          <div className="space-y-20">
             {solutions.map((solution, index) => {
               const IconComponent = solution.icon;
               return (
