@@ -3,53 +3,48 @@ import Link from 'next/link'
 import Navbar from '../components/common/Navbar'
 import Container from '../components/common/Container'
 import Footer from '../components/common/Footer'
-import { Users, Phone, Users2, MessageCircle, FolderKanban, CheckSquare } from 'lucide-react'
+import { MessageCircle, Video, Users, FileText, Shield, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Features() {
   const heroRef = useRef(null)
 
   const features = [
     {
-      id: 'meet',
-      title: 'Meet',
-      description: 'Make meetings more impactful with features like PowerPoint Live, Microsoft Whiteboard, and AI-generated meeting notes.',
-      image: '/st-images/meet.avif',
-      icon: Users
+      icon: MessageCircle,
+      title: "Real-time Messaging",
+      description: "Instant communication with your team through secure, fast messaging channels that keep everyone connected.",
+      image: "/st-images/chat.jpeg"
     },
     {
-      id: 'call',
-      title: 'Call',
-      description: 'Stay connected with crystal-clear audio and video calls, screen sharing, and advanced calling features.',
-      image: '/st-images/call.avif',
-      icon: Phone
+      icon: Video,
+      title: "Video Conferencing",
+      description: "High-quality video calls with screen sharing, recording, and advanced collaboration tools for remote teams.",
+      image: "/st-images/hd-call.jpeg"
     },
     {
-      id: 'collaborate',
-      title: 'Collaborate',
-      description: 'Work together seamlessly with real-time document editing, file sharing, and team collaboration tools.',
-      image: '/st-images/collaborate.avif',
-      icon: Users2
+      icon: Users,
+      title: "Team Collaboration",
+      description: "Work together seamlessly with shared workspaces, project boards, and real-time document collaboration.",
+      image: "/st-images/team.png"
     },
     {
-      id: 'chat',
-      title: 'Chat',
-      description: 'Communicate instantly with team chat, channels, and integrated messaging across all your devices.',
-      image: '/st-images/chat.avif',
-      icon: MessageCircle
+      icon: FileText,
+      title: "Global Access",
+      description: "Access your workspace from anywhere in the world with seamless connectivity and synchronized data across all devices.",
+      image: "/st-images/global-access.png"
     },
     {
-      id: 'project-management',
-      title: 'Project Management',
-      description: 'Organize projects, set goals, and track progress seamlessly.',
-      image: '/st-images/meet.avif',
-      icon: FolderKanban
+      icon: Shield,
+      title: "Enterprise Security",
+      description: "Bank-level security with end-to-end encryption, SSO integration, and comprehensive compliance features.",
+      image: "/st-images/global-access.png"
     },
     {
-      id: 'task-management',
-      title: 'Task Management',
-      description: 'Manage tasks efficiently with deadlines, priorities, and collaboration tools.',
-      image: '/st-images/call.avif',
-      icon: CheckSquare
+      icon: Zap,
+      title: "AI-Powered Tools",
+      description: "Smart automation, intelligent insights, and AI-assisted workflows to boost your team's productivity.",
+      image: "/st-images/ai-powered.png"
     }
   ]
 
@@ -128,45 +123,50 @@ export default function Features() {
       </div>
 
       {/* Features Section */}
-      <section className="pt-2 pb-20 bg-white">
+      <section className="py-20 bg-white">
         <Container>
-          {/* Features Sections */}
-          <div className="space-y-20">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <div key={feature.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 min-h-[400px] lg:min-h-[500px]">
-                  {/* Content */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
-                        {feature.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-gray-600 leading-relaxed mb-6 text-base sm:text-lg">
-                      {feature.description}
-                    </p>
-                    
-                    {/* Learn more button removed as requested */}
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
+              Everything you need to collaborate
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Powerful features designed to enhance your team's productivity and communication.
+            </p>
+          </div>
+
+          {/* Features Grid */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
+                  {/* Icon */}
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {feature.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {feature.description}
+                  </p>
+
                   {/* Image */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                      <img
-                        src={feature.image}
-                        alt={feature.title}
-                        className="w-full h-auto"
-                      />
-                    </div>
+                  <div className="relative h-32 rounded-lg overflow-hidden">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </Container>
       </section>
