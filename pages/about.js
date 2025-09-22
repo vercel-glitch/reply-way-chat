@@ -48,21 +48,7 @@ export default function About() {
 
       {/* Hero */}
       <div className='relative min-h-[400px] bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-slate-950 transition-colors'>
-        <div aria-hidden className='pointer-events-none absolute inset-0 overflow-hidden'>
-          <div className='hidden sm:block absolute -top-20 -left-20 h-56 w-56 rounded-full bg-gradient-to-br from-blue-200 to-indigo-200 opacity-30 blur-3xl'></div>
-          <div className='absolute bottom-[-60px] right-[-60px] h-48 w-48 sm:h-56 sm:w-56 rounded-full bg-gradient-to-tr from-cyan-200 to-blue-100 opacity-25 blur-2xl'></div>
-          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-56 w-56 sm:h-80 sm:w-80 rounded-full bg-gradient-to-b from-white to-transparent opacity-60 blur-2xl'></div>
-          <div className='hidden sm:block absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[320px] w-[320px] rounded-full opacity-[0.15]'
-            style={{ background: 'conic-gradient(from 180deg at 50% 50%, rgba(59,130,246,0.6), rgba(99,102,241,0.6), rgba(16,185,129,0.5), rgba(59,130,246,0.6))', filter: 'blur(32px)' }} />
-          <div className='absolute inset-0 opacity-[0.18]'
-            style={{ backgroundImage: `
-              linear-gradient(rgba(15,23,42,0.06) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(15,23,42,0.06) 1px, transparent 1px)
-            `,
-            backgroundSize: '28px 28px', WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8), transparent 65%)',
-            maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8), transparent 65%)' }} />
-        </div>
-
+        {/* Decorative background removed intentionally */}
         <Container>
           <div className='flex items-center justify-center min-h-[400px] py-16'>
             <div className='max-w-3xl text-center'>
