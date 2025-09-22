@@ -15,7 +15,7 @@ export default function index() {
       <section className="bg-white dark:bg-gray-950 transition-colors duration-300">
         <Container>
           <div className="px-4 sm:px-6 lg:px-8 py-6">
-            <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+            <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_24px_-10px_rgba(0,0,0,0.4)] dark:shadow-[0_10px_24px_-10px_rgba(0,0,0,0.7)] border border-gray-100 dark:border-gray-800">
               <img src="/st-images/screenshot (2).png" alt="Product screenshot" className="w-full h-auto object-cover rounded-2xl" />
             </div>
           </div>
