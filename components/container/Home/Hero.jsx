@@ -29,11 +29,11 @@ export default function Hero() {
         {/* Call-to-action buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/signup">
-            <button className="bg-primary  hover:bg-[#7c3aed] text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <button className="bg-primary  hover:bg-[#7c3aed] text-white font-semibold py-3 px-6 rounded-lg text-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
               Get Started
             </button>
           </Link>
-          <button className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200">
+          <button className="border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-200">
             Download
           </button>
         </div>
