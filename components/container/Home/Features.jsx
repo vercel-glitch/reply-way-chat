@@ -32,7 +32,7 @@ export default function Features() {
       icon: Shield,
       title: "Enterprise Security",
       description: "Bank-level security with end-to-end encryption, SSO integration, and comprehensive compliance features.",
-      image: "/st-images/global-access.png"
+      image: "/st-images/enterprise.jpeg"
     },
     {
       icon: Zap,

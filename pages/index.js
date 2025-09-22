@@ -16,7 +16,7 @@ export default function index() {
         <Container>
           <div className="px-4 sm:px-6 lg:px-8 py-6">
             <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
-              <img src="/st-images/sc.png" alt="Product screenshot" className="w-full h-auto object-cover rounded-2xl" />
+              <img src="/st-images/screenshot (2).png" alt="Product screenshot" className="w-full h-auto object-cover rounded-2xl" />
             </div>
           </div>
         </Container>
