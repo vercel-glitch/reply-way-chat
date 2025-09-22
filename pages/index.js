@@ -11,7 +11,6 @@ export default function index() {
       <Navbar />
       <Hero />
       <Features />
-     
       <CTA />
       <Footer />
     </>

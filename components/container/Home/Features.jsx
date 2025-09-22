@@ -55,40 +55,42 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon
-              return (
-                <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out">
-                  {/* Icon */}
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mr-3">
-                      <IconComponent className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {feature.title}
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {feature.description}
-                  </p>
-
-                  {/* Image */}
-                  <div className="relative overflow-hidden rounded-xl">
+        {/* Alternating Rows (same as features page) */}
+        <div className="max-w-6xl mx-auto space-y-16 md:space-y-20">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon
+            const isReversed = index % 2 === 1
+            return (
+              <div
+                key={index}
+                className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center lg:items-stretch bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-all duration-300 ease-out`}
+              >
+                {/* Image side */}
+                <div className="w-full lg:w-1/2">
+                  <div className="relative h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden">
                     <img
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-32 object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
-              )
-            })}
-          </div>
+
+                {/* Content side */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                    <IconComponent className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </Container>
     </section>
