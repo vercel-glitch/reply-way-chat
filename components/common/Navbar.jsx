@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from '../common/Container'
-import { useEffect } from 'react';
+import { Sun, Moon } from 'lucide-react'
 import { useRouter } from 'next/router';
+import { useTheme } from '@/utils/ThemeContext';
 
 export default function Navbar() {
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   const router = useRouter();
+  const { theme, toggle } = useTheme();
+  const isDark = theme === 'dark';
 
   useEffect(() => {
     const handleEscapeKey = (e) => {
@@ -39,62 +42,75 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white border-b border-gray-200 border py-3 relative">
+      <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 relative transition-colors duration-300">
         <Container className="flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
-            {/* ChatwayApp Logo */}
+            {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Image 
                 src="/st-images/logo.png" 
-                alt="ChatwayApp Logo" 
+                alt="Replyway Logo" 
                 width={120} 
                 height={40} 
-                className="h-8 w-auto"
+                className="h-8 w-auto dark:invert dark:brightness-0"
               />
             </Link>
           </div>
 
-           
+          
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             {/* Home */}
-            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-white transition-colors">
               Home
             </Link>
 
             {/* Features */}
-            <Link href="/features" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-white transition-colors">
               Features
             </Link>
 
             {/* About Us */}
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-white transition-colors">
               About Us
             </Link>
 
             {/* Contact Us */}
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-white transition-colors">
               Contact Us
             </Link>
 
             {/* Download App */}
-            <Link href="/download" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/download" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 hover:dark:text-white transition-colors">
               Download App
             </Link>
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
+            {/* Theme toggle (top-right) */}
+            <button
+              onClick={toggle}
+              aria-label="Toggle theme"
+              className="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 bg-white/70 dark:bg-gray-800/70 backdrop-blur flex items-center justify-center hover:bg-gray-50 hover:dark:bg-gray-700 transition-colors duration-300"
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDark ? (
+                <Sun className="w-5 h-5 text-yellow-300" />
+              ) : (
+                <Moon className="w-5 h-5 text-blue-600" />
+              )}
+            </button>
             <button 
               onClick={openSignupForm}
-              className="px-4 py-2 bg-primary hover:bg-primary text-white font-semibold rounded-md transition-colors"
+              className="px-4 py-2 bg-primary hover:bg-[#7c3aed] text-white font-semibold rounded-md transition-colors"
             >
               Sign Up
             </button>
             <a 
               href="https://app.replyway.com"
-              className="px-4 py-2 border border-primary rounded-md text-gray-700  font-semibold hover:bg-gray-50 transition-colors"
+              className="px-4 py-2 border border-primary rounded-md text-gray-700 dark:text-gray-200 font-semibold hover:bg-gray-50 hover:dark:bg-gray-800 transition-colors"
             >
               Sign in
             </a>

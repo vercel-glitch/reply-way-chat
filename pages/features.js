@@ -75,7 +75,7 @@ export default function Features() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className='relative min-h-[400px] bg-gradient-to-b from-slate-50 to-white'>
+      <div className='relative min-h-[400px] bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-slate-950 transition-colors duration-300'>
         {/* Subtle background elements */}
         <div aria-hidden className='pointer-events-none absolute inset-0 overflow-hidden'>
           <div className='hidden sm:block absolute -top-20 -left-20 h-56 w-56 rounded-full bg-gradient-to-br from-blue-200 to-indigo-200 opacity-30 blur-3xl'></div>
@@ -108,12 +108,12 @@ export default function Features() {
             <div className='max-w-3xl text-center'>
               <h1 
                 ref={heroRef}
-                className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 opacity-0'
+                className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4 sm:mb-6 opacity-0'
               >
                 Our Features
               </h1>
               <p 
-                className='text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed slide-in-delay-1'
+                className='text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed slide-in-delay-1'
               >
                 Discover the powerful tools that make Replyway the ultimate collaboration platform for modern teams.
               </p>
@@ -123,14 +123,14 @@ export default function Features() {
       </div>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-950 transition-colors duration-300">
         <Container>
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
               Everything you need to collaborate
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
               Powerful features designed to enhance your team's productivity and communication.
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function Features() {
               return (
                 <div
                   key={index}
-                  className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center lg:items-stretch bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-all duration-300 ease-out`}
+                  className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center lg:items-stretch bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 ease-out`}
                 >
                   {/* Image side */}
                   <div className="w-full lg:w-1/2">
@@ -163,11 +163,11 @@ export default function Features() {
                       <feature.icon className="w-6 h-6 text-blue-600" />
                     </div>
                     {/* Title */}
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 transition-colors duration-300">
                       {feature.title}
                     </h3>
                     {/* Description */}
-                    <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
                       {feature.description}
                     </p>
                   </div>
@@ -179,13 +179,13 @@ export default function Features() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-slate-950 transition-colors duration-300">
         <Container>
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6 dark:text-white">
               Ready to Experience These Features?
             </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed dark:text-gray-300">
               Start using Replyway today and transform how your team collaborates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

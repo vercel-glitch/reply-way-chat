@@ -3,15 +3,16 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative py-8 md:py-12 lg:py-20 flex items-center justify-center overflow-hidden">
+    <section className="relative py-8 md:py-12 lg:py-20 flex items-center justify-center overflow-hidden transition-colors duration-300">
 
       {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-purple-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950"></div>
 
-      {/* Content container */}
+      {/* Content container */
+      }
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6 transition-colors duration-300">
           Get ready for the future
           <br />
           of work with
@@ -20,7 +21,7 @@ export default function Hero() {
         </h1>
 
         {/* Sub-headline */}
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
           Transform the way you work with next-generation AI capabilities and
           bring together your physical and digital worlds.
         </p>
@@ -37,6 +38,8 @@ export default function Hero() {
           </button>
         </div>
       </div>
+
+      {/* (Screenshot moved to pages/index.js just below Hero) */}
     </section>
   );
 }

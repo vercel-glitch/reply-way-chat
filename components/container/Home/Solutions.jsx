@@ -56,26 +56,26 @@ export default function Solutions() {
     <>
       
       
-      <section id='solutions' className="pt-12 pb-20 bg-white">
+      <section id='solutions' className="pt-12 pb-20 bg-white dark:bg-gray-950 transition-colors">
         <Container>
           {/* Solutions Sections */}
           <div className="space-y-20">
             {solutions.map((solution, index) => {
               const IconComponent = solution.icon;
               return (
-                <div key={solution.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-gray-50 rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 min-h-[400px] lg:min-h-[500px]">
+                <div key={solution.id} className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 dark:border-gray-800 min-h-[400px] lg:min-h-[500px] transition-colors">
                   {/* Content */}
                   <div className={`flex-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div className="flex items-center space-x-3 mb-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-blue-600" />
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-indigo-900/40 rounded-xl flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-blue-600 dark:text-indigo-300" />
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
+                      <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white">
                         {solution.title}
                       </h3>
                     </div>
                     
-                    <p className="text-gray-600 leading-relaxed mb-6 text-base sm:text-lg">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-base sm:text-lg">
                       {solution.description}
                     </p>
                     

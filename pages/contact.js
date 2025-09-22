@@ -44,7 +44,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section (unchanged design) */}
-      <div className='relative min-h-[400px] bg-gradient-to-b from-slate-50 to-white'>
+      <div className='relative min-h-[400px] bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-slate-950 transition-colors'>
         <div aria-hidden className='pointer-events-none absolute inset-0 overflow-hidden'>
           <div className='hidden sm:block absolute -top-20 -left-20 h-56 w-56 rounded-full bg-gradient-to-br from-blue-200 to-indigo-200 opacity-30 blur-3xl'></div>
           <div className='absolute bottom-[-60px] right-[-60px] h-48 w-48 sm:h-56 sm:w-56 rounded-full bg-gradient-to-tr from-cyan-200 to-blue-100 opacity-25 blur-2xl'></div>
@@ -61,8 +61,8 @@ export default function Contact() {
         <Container>
           <div className='flex items-center justify-center min-h-[400px] py-16'>
             <div className='max-w-3xl text-center'>
-              <h1 ref={heroRef} className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 opacity-0'>Get in Touch</h1>
-              <p className='text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed slide-in-delay-1'>
+              <h1 ref={heroRef} className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4 sm:mb-6 opacity-0'>Get in Touch</h1>
+              <p className='text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed slide-in-delay-1'>
                 Have questions about Replyway? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
               </p>
             </div>
@@ -71,12 +71,12 @@ export default function Contact() {
       </div>
 
       {/* Contact Form & Info (unchanged design) */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Form */}
             <div ref={formRef} className="opacity-0">
-              <h2 className="text-3xl font-semibold text-gray-900 mb-6">Send us a Message</h2>
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <Input id="firstName" label="First Name" placeholder="Your first name" />
@@ -85,8 +85,8 @@ export default function Contact() {
                 <Input id="email" type="email" label="Email Address" placeholder="your.email@example.com" />
                 <Input id="company" label="Company (Optional)" placeholder="Your company name" />
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                  <select id="subject" name="subject" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                  <select id="subject" name="subject" className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200">
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
                     <option value="sales">Sales & Pricing</option>
@@ -97,8 +97,8 @@ export default function Contact() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea id="message" name="message" rows={6} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none" placeholder="Tell us how we can help you..."></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                  <textarea id="message" name="message" rows={6} className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none" placeholder="Tell us how we can help you..."></textarea>
                 </div>
                 <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
                   <Send className="w-5 h-5" /><span>Send Message</span>
@@ -108,21 +108,21 @@ export default function Contact() {
 
             {/* Info */}
             <div ref={infoRef} className="opacity-0">
-              <h2 className="text-3xl font-semibold text-gray-900 mb-6">Contact Information</h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+              <h2 className="text-3xl font-semibold text-gray-900 dark:text-white mb-6">Contact Information</h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
 
               <div className="space-y-6">
                 {contactItems.map(({ Icon, title, note, link, text, addr, hours }, i) => (
                   <div key={i} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-blue-600" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-indigo-900/40 rounded-xl flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-blue-600 dark:text-indigo-300" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">{title}</h3>
-                      {note && <p className="text-gray-600 mb-2">{note}</p>}
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">{title}</h3>
+                      {note && <p className="text-gray-600 dark:text-gray-300 mb-2">{note}</p>}
                       {link && <a href={link} className="text-blue-600 hover:text-blue-700 font-medium">{text}</a>}
-                      {addr && <p className="text-gray-600">{addr.map((l, k) => (<span key={k}>{l}<br/></span>))}</p>}
-                      {hours && <p className="text-gray-600">{hours.map((l, k) => (<span key={k}>{l}<br/></span>))}</p>}
+                      {addr && <p className="text-gray-600 dark:text-gray-300">{addr.map((l, k) => (<span key={k}>{l}<br/></span>))}</p>}
+                      {hours && <p className="text-gray-600 dark:text-gray-300">{hours.map((l, k) => (<span key={k}>{l}<br/></span>))}</p>}
                     </div>
                   </div>
                 ))}
@@ -133,17 +133,17 @@ export default function Contact() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-slate-950 transition-colors">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Quick answers to common questions</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Quick answers to common questions</p>
           </div>
           <div className="max-w-4xl mx-auto space-y-6">
             {faqs.map((f, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{f.q}</h3>
-                <p className="text-gray-600 leading-relaxed">{f.a}</p>
+              <div key={i} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">{f.q}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
@@ -151,11 +151,11 @@ export default function Contact() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
         <Container>
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Ready to Get Started?</h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">Join thousands of teams already using Replyway to transform their collaboration experience.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-white mb-6">Ready to Get Started?</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">Join thousands of teams already using Replyway to transform their collaboration experience.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/signup">
                 <button className="bg-primary hover:bg-[#7c3aed] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">Get Started</button>
@@ -174,9 +174,9 @@ export default function Contact() {
 function Input({ id, label, type='text', placeholder }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
+      <label htmlFor={id} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{label}</label>
       <input id={id} name={id} type={type} placeholder={placeholder}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200" />
+        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200" />
     </div>
   )
 }
