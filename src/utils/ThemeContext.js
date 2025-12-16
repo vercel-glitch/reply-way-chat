@@ -5,14 +5,14 @@ const ThemeContext = React.createContext({ theme: 'light', toggle: () => {} });
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = React.useState('light');
 
-  // Initialize from storage or system preference
+  // Initialize from storage, defaulting to light mode
   React.useEffect(() => {
     const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
     if (stored === 'dark' || stored === 'light') {
       setTheme(stored);
-    } else if (typeof window !== 'undefined') {
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+    } else {
+      // Default to light mode instead of system preference
+      setTheme('light');
     }
   }, []);
 

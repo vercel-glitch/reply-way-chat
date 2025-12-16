@@ -1,34 +1,92 @@
-import React from 'react'
-import Container from '../../common/Container'
-import Link from 'next/link'
+import React from "react";
+import Container from "../../common/Container";
+import Link from "next/link";
 
 export default function CTA() {
-    return (
-        <section className="relative py-16 sm:py-20 bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-slate-950 transition-colors">
-            <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="absolute -top-16 -right-24 h-56 w-56 rounded-full bg-gradient-to-br from-blue-200 to-indigo-200 opacity-30 blur-3xl dark:from-indigo-800 dark:to-blue-900 dark:opacity-20" />
-                <div className="absolute -bottom-12 -left-20 h-48 w-48 rounded-full bg-gradient-to-tr from-cyan-200 to-blue-100 opacity-25 blur-2xl dark:from-cyan-900 dark:to-slate-900 dark:opacity-20" />
+  return (
+    <section className="relative py-20 bg-gradient-to-br from-blue-600 via-blue-600 to-blue-800 overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-tr from-blue-400/20 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
+      <Container>
+        <div className="relative text-center max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight">
+            Ready to transform your
+            <span className="block text-transparent bg-gradient-to-r from-white to-blue-100 bg-clip-text">
+              team collaboration?
+            </span>
+          </h2>
+          <p className="text-body-large sm:text-xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Join thousands of teams already using ReplyWay to streamline
+            communication, boost productivity, and achieve better results
+            together.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Link
+              href="/signup"
+              className="btn btn-large bg-white text-blue-600 hover:bg-gray-50 font-semibold px-8 py-4 text-lg"
+            >
+              Start Free Trial
+            </Link>
+            <Link
+              href="/contact"
+              className="btn btn-large bg-transparent text-white border-2 border-white/30 hover:bg-white/10 px-8 py-4 text-lg"
+            >
+              Talk to Sales
+            </Link>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-blue-200 text-sm">
+            <div className="flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 text-green-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>Free 30-day trial</span>
             </div>
-            <Container>
-                <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50/70 via-indigo-50/70 to-white/60 dark:from-slate-800/60 dark:via-gray-900/60 dark:to-gray-900/60" />
-                    <div className="relative px-6 sm:px-10 py-10 sm:py-14 text-center">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight dark:text-white">
-                            Ready to elevate your team’s collaboration?
-                        </h2>
-                        <p className="mt-3 sm:mt-4 text-gray-700 text-sm sm:text-base max-w-2xl mx-auto dark:text-gray-300">
-                            Join Replyway and streamline communication with modern tools that keep your work moving forward.
-                        </p>
-                        <div className="mt-6 sm:mt-8 flex justify-center">
-                            <Link href="/signup" className="inline-flex items-center justify-center rounded-lg bg-primary px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/50">
-                                Get Started
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </Container>
-        </section>
-    )
+            <div className="flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 text-green-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>No setup fees</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <svg
+                className="w-5 h-5 text-green-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>Cancel anytime</span>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
 }
-
-

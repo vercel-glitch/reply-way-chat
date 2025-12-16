@@ -43,48 +43,55 @@ export default function Features() {
   ]
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-950 transition-colors duration-300">
+    <section className="py-20 bg-slate-50 dark:bg-slate-800/50 transition-colors duration-300">
       <Container>
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-            Everything you need to collaborate
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-sm font-medium mb-4">
+            Features
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+            Everything your team
+            <span className="block text-transparent bg-gradient-to-r from-blue-500 via-blue-500 to-blue-600 bg-clip-text animate-gradient">
+              needs to succeed
+            </span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
-            Powerful features designed to enhance your team's productivity and communication.
+          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed font-light mt-6">
+            Powerful collaboration tools designed to streamline communication, boost productivity, 
+            and keep your team connected across all projects and workflows.
           </p>
         </div>
 
-        {/* Alternating Rows (same as features page) */}
-        <div className="max-w-6xl mx-auto space-y-16 md:space-y-20">
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {features.map((feature, index) => {
             const IconComponent = feature.icon
-            const isReversed = index % 2 === 1
             return (
               <div
                 key={index}
-                className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center lg:items-stretch bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 ease-out`}
+                className="card-feature group"
               >
-                {/* Image side */}
-                <div className="w-full lg:w-1/2">
-                  <div className="relative h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden">
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                {/* Feature Image */}
+                <div className="relative h-48 rounded-xl overflow-hidden mb-6">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
 
-                {/* Content side */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                  <div className="w-12 h-12 bg-blue-50 dark:bg-indigo-900/40 rounded-lg flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6 text-blue-600 dark:text-indigo-300" />
+                {/* Feature Content */}
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/40 rounded-lg flex items-center justify-center">
+                      <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 className="text-heading-4 text-gray-900 dark:text-white">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
+                  <p className="text-body text-gray-600 dark:text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
